@@ -1,5 +1,6 @@
 # Hugo 构建产物
 /public/
+/.hugo_build.lock
 
 # Hugo 模块缓存（本地下载的主题等）
 /resources/_gen/
