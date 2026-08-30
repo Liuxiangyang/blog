@@ -1,0 +1,20 @@
+{
+  "Hugo 新文章": {
+    "prefix": "hugopost",
+    "scope": "markdown",
+    "body": [
+      "---",
+      "title: \"${1:文章标题}\"",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "draft: true",
+      "tags: [\"${2:标签}\"]",
+      "categories: [\"${3:分类}\"]",
+      "popular: false",
+      "donate: false",
+      "---",
+      "",
+      "${4:开始写正文...}"
+    ],
+    "description": "生成 Hugo 文章 front matter 骨架"
+  }
+}
