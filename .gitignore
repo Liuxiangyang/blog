@@ -1,0 +1,14 @@
+# Hugo 构建产物
+/public/
+
+# Hugo 模块缓存（本地下载的主题等）
+/resources/_gen/
+/hugo_stats.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 本地编辑备份
+*.tmp
+*~

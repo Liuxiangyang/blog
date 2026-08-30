@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <rect width="240" height="240" fill="#f5f5f5"/>
+  <rect x="10" y="10" width="220" height="220" rx="12" fill="white" stroke="#1677ff" stroke-width="3"/>
+  <text x="120" y="110" font-family="sans-serif" font-size="18" fill="#1677ff" text-anchor="middle">支付宝收款码</text>
+  <text x="120" y="140" font-family="sans-serif" font-size="12" fill="#999" text-anchor="middle">（请替换为真实二维码）</text>
+</svg>
