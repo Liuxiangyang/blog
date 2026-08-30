@@ -1,0 +1,54 @@
+{{- /* 覆盖 PaperMod 首页横幅：保留原内容 + 热门文章 + 那年今日 */ -}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
+
+{{- /* 热门文章：front matter 标记 popular: true */ -}}
+{{- $popular := where site.RegularPages "Params.popular" true | first 5 -}}
+{{- if gt (len $popular) 0 -}}
+<section class="home-widget" style="margin-top: 1.5rem;">
+    <h2 style="font-size: 1.15rem; margin-bottom: 0.6rem;">🔥 热门文章</h2>
+    <ul style="list-style: none; padding: 0; display: grid; gap: 0.4rem;">
+        {{- range $popular -}}
+        <li>
+            <a href="{{ .RelPermalink }}" style="text-decoration: none;">{{ .Title }}</a>
+            <span style="font-size: 0.85em; color: var(--secondary);">（{{ .Date.Format "2006-01-02" }}）</span>
+        </li>
+        {{- end -}}
+    </ul>
+</section>
+{{- end -}}
+
+{{- /* 那年今日：往年今天发表的文章 */ -}}
+{{- $today := now.Format "01-02" -}}
+{{- $thisYear := now.Year -}}
+{{- $onThisDay := slice -}}
+{{- range site.RegularPages -}}
+    {{- if and (eq (.Date.Format "01-02") $today) (lt .Date.Year $thisYear) -}}
+        {{- $onThisDay = $onThisDay | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- if gt (len $onThisDay) 0 -}}
+<section class="home-widget" style="margin-top: 1.5rem;">
+    <h2 style="font-size: 1.15rem; margin-bottom: 0.6rem;">📅 那年今日</h2>
+    <ul style="list-style: none; padding: 0; display: grid; gap: 0.4rem;">
+        {{- range $onThisDay -}}
+        <li>
+            <a href="{{ .RelPermalink }}" style="text-decoration: none;">{{ .Title }}</a>
+            <span style="font-size: 0.85em; color: var(--secondary);">（{{ .Date.Format "2006-01-02" }}）</span>
+        </li>
+        {{- end -}}
+    </ul>
+</section>
+{{- end -}}

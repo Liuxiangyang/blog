@@ -5,6 +5,7 @@ draft: false
 tags: ["博客", "Hugo", "教程"]
 categories: ["技术"]
 donate: true
+popular: true
 ---
 
 欢迎来到我的博客！本站基于 **Hugo + PaperMod** 搭建，部署在 Vercel。
