@@ -1,0 +1,17 @@
+{{- /* 全站热门文章：页脚上方常驻显示（front matter popular: true 标记） */ -}}
+{{- $popular := where site.RegularPages "Params.popular" true | first 5 -}}
+{{- if gt (len $popular) 0 -}}
+<section class="popular-posts" style="max-width: 750px; margin: 2rem auto 1rem; padding: 0 20px;">
+    <h2 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--primary);">🔥 热门文章</h2>
+    <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem;">
+        {{- range $popular -}}
+        <li>
+            <a href="{{ .RelPermalink }}" style="text-decoration: none; display: inline-flex; align-items: baseline; gap: 0.5rem;">
+                <span class="popular-title">{{ .Title }}</span>
+                <span style="font-size: 0.82em; color: var(--secondary); white-space: nowrap;">{{ .Date.Format "2006-01-02" }}</span>
+            </a>
+        </li>
+        {{- end -}}
+    </ul>
+</section>
+{{- end -}}

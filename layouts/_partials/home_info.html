@@ -14,23 +14,7 @@
 </article>
 {{- end -}}
 
-{{- /* 热门文章：front matter 标记 popular: true */ -}}
-{{- $popular := where site.RegularPages "Params.popular" true | first 5 -}}
-{{- if gt (len $popular) 0 -}}
-<section class="home-widget" style="margin-top: 1.5rem;">
-    <h2 style="font-size: 1.15rem; margin-bottom: 0.6rem;">🔥 热门文章</h2>
-    <ul style="list-style: none; padding: 0; display: grid; gap: 0.4rem;">
-        {{- range $popular -}}
-        <li>
-            <a href="{{ .RelPermalink }}" style="text-decoration: none;">{{ .Title }}</a>
-            <span style="font-size: 0.85em; color: var(--secondary);">（{{ .Date.Format "2006-01-02" }}）</span>
-        </li>
-        {{- end -}}
-    </ul>
-</section>
-{{- end -}}
-
-{{- /* 那年今日：往年今天发表的文章 */ -}}
+{{- /* 那年今日：往年今天发表的文章（仅首页） */ -}}
 {{- $today := now.Format "01-02" -}}
 {{- $thisYear := now.Year -}}
 {{- $onThisDay := slice -}}
