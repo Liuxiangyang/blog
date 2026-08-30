@@ -1,0 +1,18 @@
+{
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.tabSize": 4
+  },
+  "markdown.preview.breaks": true,
+  "markdown.preview.fontSize": 15,
+  "githubMarkdownPreview.scrollEditorWithPreview": true,
+  "githubMarkdownPreview.githubTheme": "light_default",
+  "markdown-preview-enhanced.codeBlockTheme": "github-light.css",
+  "markdown-preview-enhanced.previewTheme": "github-light.css",
+  "files.eol": "\n"
+}
