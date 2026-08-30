@@ -19,5 +19,5 @@ Thumbs.db
 /scripts/.browser-state.json
 
 /scripts/
-/package.json
+# /package.json (提交给 Vercel 构建用)
 /package-lock.json
