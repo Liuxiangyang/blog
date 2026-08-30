@@ -1,7 +1,7 @@
 # =========================================================
 # 站点基础配置
 # =========================================================
-baseURL = "https://YOUR-DOMAIN.vercel.app/"   # TODO: 部署后改为你的真实域名
+baseURL = "https://blog-beige-seven.vercel.app/"
 title = "我的博客"
 locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
