@@ -1,5 +1,5 @@
 {
-  "framework": "other",
+  "framework": "hugo",
   "buildCommand": "npm run build",
   "outputDirectory": "public"
 }
