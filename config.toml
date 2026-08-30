@@ -76,7 +76,7 @@ buildDrafts = false
   # 社交图标
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/YOUR-USERNAME"   # TODO: 改为你的 GitHub
+    url = "https://github.com/Liuxiangyang"
   [[params.socialIcons]]
     name = "email"
     url = "mailto:your@email.com"              # TODO: 改为你的邮箱
