@@ -13,3 +13,11 @@ Thumbs.db
 # 本地编辑备份
 *.tmp
 *~
+
+# Node 依赖与浏览器驱动
+/node_modules/
+/scripts/.browser-state.json
+
+/scripts/
+/package.json
+/package-lock.json
