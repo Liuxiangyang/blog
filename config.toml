@@ -32,6 +32,12 @@ buildDrafts = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3
+  # 数学公式：让 $...$ / $$...$$ 不被 Markdown 解析（交给 KaTeX 渲染）
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['$$', '$$'], ['\[', '\]']]
+      inline = [['$', '$'], ['\(', '\)']]
 
 # =========================================================
 # PaperMod 主题参数

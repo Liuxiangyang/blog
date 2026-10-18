@@ -1,0 +1,28 @@
+{{- /* 自定义 head 扩展 */ -}}
+
+{{- /* 数学公式：仅当 front matter 设置 math: true 时加载 KaTeX */ -}}
+{{- if .Param "math" }}
+<link rel="stylesheet" href="/katex/katex.min.css">
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']});"></script>
+{{- end }}
+
+<style>
+/* 表格：窄屏横向滚动 */
+.md-content table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+/* 研究报告图片：自适应宽度 + 圆角 */
+.md-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+/* 暗色模式：KaTeX 公式颜色适配 */
+[data-theme="dark"] .katex { color: #e6e6e6; }
+/* 引用块（命题/警示框）内公式也适配 */
+[data-theme="dark"] blockquote .katex { color: #e6e6e6; }
+</style>
