@@ -112,6 +112,11 @@ buildDrafts = false
     url = "/tags/"
     weight = 40
   [[menu.main]]
+    identifier = "research"
+    name = "研究"
+    url = "/research/"
+    weight = 45
+  [[menu.main]]
     identifier = "about"
     name = "关于"
     url = "/about/"
