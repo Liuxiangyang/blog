@@ -1,4 +1,4 @@
-{{- /* 覆盖 PaperMod 首页横幅：保留原内容 + 热门文章 + 那年今日 */ -}}
+{{- /* 首页横幅：现代极简重做 */ -}}
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
     <header class="entry-header">
@@ -8,13 +8,31 @@
         {{ $opts := dict "display" "block" }}
         {{ .Content | $.Page.RenderString $opts }}
     </div>
+    <a class="home-action" href="/research/">查看研究作品</a>
+    <figure class="home-figure">
+        <img src="/images/research/month-spread/fig1.png"
+             alt="苯乙烯主力价格与近端月差（M0−M1）" loading="eager">
+        <figcaption>《苯乙烯量化研究（二）》：主力价格与近端月差（M0−M1）</figcaption>
+    </figure>
     <footer class="entry-footer">
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
     </footer>
 </article>
 {{- end -}}
 
-{{- /* 那年今日：往年今天发表的文章（仅首页） */ -}}
+{{- /* 精选研究图表：系列一/系列二的关键发现 */ -}}
+<section class="home-charts">
+    <a class="chart-item" href="/posts/styrene-pricing-quant/">
+        <img src="/images/research/styrene/fig5.png" alt="EB 日收益分布的肥尾特征" loading="lazy">
+        <span class="chart-caption">收益肥尾：超额峰度 4.76，极端行情远多于正态假设</span>
+    </a>
+    <a class="chart-item" href="/posts/month-spread-truth/">
+        <img src="/images/research/month-spread/fig3.png" alt="便利收益五分位下的价格水平" loading="lazy">
+        <span class="chart-caption">U 型非线性：月差结构的极值两端都是危险区</span>
+    </a>
+</section>
+
+{{- /* 那年今日：往年今天发表的文章（仅首页） */}}
 {{- $today := now.Format "01-02" -}}
 {{- $thisYear := now.Year -}}
 {{- $onThisDay := slice -}}
@@ -25,7 +43,7 @@
 {{- end -}}
 {{- if gt (len $onThisDay) 0 -}}
 <section class="home-widget" style="margin-top: 1.5rem;">
-    <h2 style="font-size: 1.15rem; margin-bottom: 0.6rem;">📅 那年今日</h2>
+    <h2 style="font-size: 1.05rem; margin-bottom: 0.6rem;">那年今日</h2>
     <ul style="list-style: none; padding: 0; display: grid; gap: 0.4rem;">
         {{- range $onThisDay -}}
         <li>

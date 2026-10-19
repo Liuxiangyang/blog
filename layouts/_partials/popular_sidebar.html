@@ -1,0 +1,15 @@
+{{- /* 热门文章：主内容右侧栏（桌面端 sticky） */ -}}
+{{- $popular := where site.RegularPages "Params.popular" true | first 5 -}}
+{{- if gt (len $popular) 0 -}}
+<section class="popular-posts">
+    <h2>热门文章</h2>
+    <ul>
+        {{- range $popular -}}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <div class="popular-date">{{ .Date.Format "2006-01-02" }}</div>
+        </li>
+        {{- end -}}
+    </ul>
+</section>
+{{- end -}}

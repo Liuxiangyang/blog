@@ -21,3 +21,6 @@ Thumbs.db
 /scripts/
 # /package.json (提交给 Vercel 构建用)
 /package-lock.json
+
+# 设计检测工具产物（本地）
+/.taste-skill/

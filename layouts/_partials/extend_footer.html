@@ -1,62 +1,24 @@
-{{- /* 热门文章：仿 Echo 右侧栏常驻（桌面端 fixed 右栏，移动端隐藏） */ -}}
-{{- $popular := where site.RegularPages "Params.popular" true | first 5 -}}
-{{- if gt (len $popular) 0 -}}
-<style>
-@media (min-width: 1100px) {
-  .popular-posts {
-    position: fixed;
-    right: 2vw;
-    top: 130px;
-    width: 250px;
-    max-width: 22vw;
-    background: var(--theme);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    z-index: 40;
-  }
-  .popular-posts h2 {
-    font-size: 0.95rem;
-    margin: 0 0 0.7rem;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-  .popular-posts ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.5rem;
-  }
-  .popular-posts li a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: var(--primary);
-    display: block;
-  }
-  .popular-posts li a:hover { color: var(--link-hover, var(--primary)); text-decoration: underline; }
-  .popular-posts li .popular-date {
-    font-size: 0.75rem;
-    color: var(--secondary);
-  }
-}
-@media (max-width: 1099px) {
-  .popular-posts { display: none; }
-}
-</style>
-<aside class="popular-posts">
-    <h2>🔥 热门文章</h2>
-    <ul>
-        {{- range $popular -}}
-        <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <div class="popular-date">{{ .Date.Format "2006-01-02" }}</div>
-        </li>
-        {{- end -}}
-    </ul>
-</aside>
-{{- end -}}
+{{- /* 页脚扩展：滚动入场动效（克制，尊重 reduced-motion） */ -}}
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.md-content > p, .md-content > h2, .md-content > h3, .md-content > blockquote');
+  els.forEach(function (el, i) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = 'opacity .45s ease, transform .45s ease';
+    el.style.transitionDelay = (Math.min(i, 5) * 45) + 'ms';
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
