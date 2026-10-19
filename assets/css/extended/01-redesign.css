@@ -130,13 +130,16 @@ body {
 
 /* ---------- 两栏布局 ---------- */
 .main {
-  max-width: 1400px;
+  max-width: none;
+  width: 100%;
   margin-inline: auto;
+  padding-left: clamp(24px, 3vw, 80px);
+  padding-right: clamp(24px, 3vw, 80px);
 }
 .main-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) clamp(280px, 19vw, 380px);
+  gap: clamp(32px, 3vw, 64px);
   align-items: start;
 }
 .main-col { min-width: 0; }
@@ -180,7 +183,9 @@ body {
 
 /* ---------- 导航 ---------- */
 .header-nav, .footer {
-  max-width: 1400px;
+  max-width: none;
+  padding-left: clamp(24px, 3vw, 80px);
+  padding-right: clamp(24px, 3vw, 80px);
 }
 .header {
   background: var(--theme);
@@ -213,7 +218,7 @@ body {
   margin-bottom: 0.4rem;
 }
 .home-info .entry-header h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 7.5rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
   font-weight: 750;
@@ -301,8 +306,8 @@ body {
 /* 研究卡片（2 列） */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: clamp(20px, 1.6vw, 32px);
 }
 .research-card .entry-cover img { height: 230px; }
 .research-card {
@@ -436,7 +441,7 @@ body {
 /* 文章封面（单页） */
 .post-single .post-content,
 .post-single .post-header {
-  max-width: 820px;
+  max-width: clamp(680px, 58vw, 900px);
 }
 .post-single .entry-cover {
   margin: 1.4rem 0 1.8rem;
@@ -472,7 +477,7 @@ body {
 
 /* ---------- 研究作品页 ---------- */
 .page-header h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 7.5rem);
   letter-spacing: -0.02em;
   font-weight: 750;
   line-height: 1.22;
