@@ -47,6 +47,7 @@ buildDrafts = false
   title = "刘向阳 · 商品期货量化研究"
   description = "商品期货量化研究：定价框架、期限结构与交易规则"
   keywords = ["博客", "技术", "Hugo"]
+
   author = ""
   DateFormat = "2006-01-02"
   defaultTheme = "auto"          # auto = 跟随系统，可手动切换
@@ -74,9 +75,13 @@ buildDrafts = false
     threshold = 0.4
     minMatchCharLength = 1
 
+  # 顶部 logo 文字
+  [params.label]
+    text = "刘向阳"
+
   # 首页横幅
   [params.homeInfoParams]
-    Title = "商品期货量化研究"
+    Title = "刘向阳"
     Content = "用可检验的统计方法研究化工品定价、期限结构与交易规则。两篇系列研究报告已在「研究作品」中公开。"
 
   # 社交图标

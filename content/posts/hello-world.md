@@ -3,7 +3,7 @@ title: "Hello World：博客搭建完成"
 date: 2026-08-30
 draft: false
 tags: ["博客", "Hugo", "教程"]
-categories: ["技术"]
+categories: ["随笔"]
 donate: true
 popular: true
 ---
