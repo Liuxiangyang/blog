@@ -3,7 +3,7 @@ title: "Hello World：博客搭建完成"
 date: 2026-08-30
 draft: false
 tags: ["博客", "Hugo", "教程"]
-categories: ["随笔"]
+categories: ["技术"]
 donate: true
 popular: true
 ---
@@ -30,7 +30,7 @@ def hello(name: str) -> str:
 
 ### 中文排版验证
 
-这一段文字用于验证 Hugo 的中文字数统计与阅读时长是否正确。`hasCJKLanguage = true` 已开启，中文按字计数。Emoji 支持已开启。
+这一段文字用于验证 Hugo 的中文字数统计与阅读时长是否正确。`hasCJKLanguage = true` 已开启，中文按字计数。Emoji 支持已开启：🚀🎉📝
 
 ### 引用
 
@@ -57,4 +57,4 @@ categories: ["分类"]
 
 感谢阅读。欢迎使用底部评论区或搜索功能探索本站。
 
-> 2026-08-31 更新：博客已部署上线。
+> 2026-08-31 更新：博客已部署上线 🎉

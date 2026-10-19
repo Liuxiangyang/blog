@@ -13,32 +13,11 @@
 </div>
 {{- end }}
 
-
-{{- /* 精选研究图表 */ -}}
-<section class="home-charts research-charts">
-    <a class="chart-item" href="/posts/styrene-pricing-quant/">
-        <img src="/images/research/styrene/fig5.png" alt="EB 日收益分布的肥尾特征" loading="lazy">
-        <span class="chart-caption">收益肥尾：超额峰度 4.76，极端行情远多于正态假设</span>
-    </a>
-    <a class="chart-item" href="/posts/month-spread-truth/">
-        <img src="/images/research/month-spread/fig3.png" alt="便利收益五分位下的价格水平" loading="lazy">
-        <span class="chart-caption">U 型非线性：月差结构的极值两端都是危险区</span>
-    </a>
-</section>
-
 {{- /* 自动聚合：categories 含「研究」的文章，按日期倒序 */ -}}
 {{- $pages := where site.RegularPages "Params.categories" "intersect" (slice "研究") }}
 {{- if gt (len $pages) 0 }}
   {{- range $pages.ByDate.Reverse }}
-  {{- $page := . }}
-  <article class="post-entry research-entry">
-    {{- with .Params.cover }}
-      {{- with .image }}
-      <figure class="entry-cover">
-        <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy">
-      </figure>
-      {{- end }}
-    {{- end }}
+  <article class="post-entry">
     <header class="entry-header">
       <h2>{{ .Title }}</h2>
     </header>

@@ -2,7 +2,7 @@
 # 站点基础配置
 # =========================================================
 baseURL = "https://blog.liuxiangyang.vercel.app/"
-title = "刘向阳 · 商品期货量化研究"
+title = "我的博客"
 locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true                          # 中文排版/字数统计必需
@@ -44,10 +44,9 @@ buildDrafts = false
 # =========================================================
 [params]
   env = "production"
-  title = "刘向阳 · 商品期货量化研究"
-  description = "商品期货量化研究：定价框架、期限结构与交易规则"
+  title = "我的博客"
+  description = "记录技术、投资与生活"
   keywords = ["博客", "技术", "Hugo"]
-
   author = ""
   DateFormat = "2006-01-02"
   defaultTheme = "auto"          # auto = 跟随系统，可手动切换
@@ -75,14 +74,10 @@ buildDrafts = false
     threshold = 0.4
     minMatchCharLength = 1
 
-  # 顶部 logo 文字
-  [params.label]
-    text = "刘向阳"
-
   # 首页横幅
   [params.homeInfoParams]
-    Title = "刘向阳"
-    Content = "用可检验的统计方法研究化工品定价、期限结构与交易规则。两篇系列研究报告已在「研究作品」中公开。"
+    Title = "👋 欢迎来到我的博客"
+    Content = "这里记录我的技术学习、项目实践与思考。"
 
   # 社交图标
   [[params.socialIcons]]

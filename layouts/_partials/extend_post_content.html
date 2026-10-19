@@ -1,8 +1,8 @@
 {{- /* 文章底部打赏区块 - 覆盖主题空钩子 */ -}}
 {{- /* 在文章 front matter 加 `donate: true` 才会显示 */ -}}
 {{- if .Param "donate" }}
-<div class="donate" style="margin: 2rem auto; max-width: 420px; padding: 1.2rem 1.5rem; border: 0; background: var(--surface); border-radius: 2px; text-align: center;">
-  <div style="font-weight: 600; margin-bottom: 0.8rem;">如果这篇文章对你有帮助，欢迎打赏支持</div>
+<div class="donate" style="margin: 2rem auto; max-width: 420px; padding: 1.2rem 1.5rem; border: 1px dashed var(--border); border-radius: 8px; text-align: center;">
+  <div style="font-weight: 600; margin-bottom: 0.8rem;">💖 如果这篇文章对你有帮助，欢迎打赏支持</div>
   <div style="display: flex; justify-content: center; gap: 1.5rem;">
     <div>
       <img src="/images/wechat-pay.svg" alt="微信打赏" loading="lazy"
