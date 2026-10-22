@@ -32,6 +32,9 @@ buildDrafts = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3
+  # 允许 Markdown 中使用原始 HTML
+  [markup.goldmark.renderer]
+    unsafe = true
   # 数学公式：让 $...$ / $$...$$ 不被 Markdown 解析（交给 KaTeX 渲染）
   [markup.goldmark.extensions.passthrough]
     enable = true
