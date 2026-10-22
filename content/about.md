@@ -5,7 +5,7 @@ description: "关于本站与作者"
 
 # 关于我
 
-![自定史诗](/images/about-achievement.jpg)
+<img src="/images/about-achievement.jpg" alt="自定史诗" style="float: right; width: 280px; margin-left: 2rem; margin-bottom: 1rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 
 ## 自定史诗
 
