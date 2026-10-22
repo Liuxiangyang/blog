@@ -1,0 +1,53 @@
+/* =========================================
+   色彩系统：为不同内容类型添加视觉标识
+   技术 = 蓝 / 投资 = 橙 / 生活 = 绿
+   分类 class 由 layouts/_partials/post-category-class.html 注入
+   ========================================= */
+
+:root {
+    --tech-color: #4A90E2;
+    --invest-color: #E27D4A;
+    --life-color: #52B788;
+}
+
+/* ---------- 首页/列表页：文章左侧色条 ---------- */
+.post-entry {
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
+    transition: transform 0.2s ease;
+}
+.post-entry.cat-tech   { border-left-color: var(--tech-color); }
+.post-entry.cat-invest { border-left-color: var(--invest-color); }
+.post-entry.cat-life   { border-left-color: var(--life-color); }
+
+.post-entry:hover {
+    transform: translateX(3px);
+}
+
+/* ---------- 文章页：标题上方色带 ---------- */
+.post-single .post-header {
+    position: relative;
+}
+.post-single .post-header::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    width: 4rem;
+    height: 3px;
+    border-radius: 2px;
+}
+.post-single.cat-tech .post-header::before   { background: var(--tech-color); }
+.post-single.cat-invest .post-header::before { background: var(--invest-color); }
+.post-single.cat-life .post-header::before   { background: var(--life-color); }
+
+/* ---------- 文章页：底部标签按分类着色 ---------- */
+.post-single.cat-tech .post-tags a {
+    box-shadow: inset 0 -2px 0 var(--tech-color);
+}
+.post-single.cat-invest .post-tags a {
+    box-shadow: inset 0 -2px 0 var(--invest-color);
+}
+.post-single.cat-life .post-tags a {
+    box-shadow: inset 0 -2px 0 var(--life-color);
+}

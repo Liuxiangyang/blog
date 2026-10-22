@@ -1,0 +1,16 @@
+{{- /* 根据文章标签返回内容分类 class：cat-invest / cat-tech / cat-life / 空 */ -}}
+{{- /* 优先级：投资 > 技术 > 生活（命中投资类标签即归为投资） */ -}}
+{{- $invest := slice "投资" "期货" "量化" "交易" "风险管理" "研究报告" "期限结构" "苯乙烯" -}}
+{{- $tech := slice "技术" "博客" "Hugo" "hugo" "教程" "Python" "Git" -}}
+{{- $life := slice "生活" "思考" "随笔" -}}
+{{- $cat := "" -}}
+{{- range .Params.tags -}}
+  {{- if in $invest . -}}
+    {{- $cat = "cat-invest" -}}
+  {{- else if and (eq $cat "") (in $tech .) -}}
+    {{- $cat = "cat-tech" -}}
+  {{- else if and (eq $cat "") (in $life .) -}}
+    {{- $cat = "cat-life" -}}
+  {{- end -}}
+{{- end -}}
+{{- return $cat -}}
